@@ -18,9 +18,11 @@ response = requests.get(filename)
 
 if response.status_code == 200:
     data = StringIO(response.text)
-    df = pd.read_csv(data)
+    df = pd.read_csv(filename)
     print(df)  # Display the first few rows of the DataFrame
 else:
     print("Failed to fetch the data")
 
 print(df.iloc[0,1])
+
+print("Testing commit")
